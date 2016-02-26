@@ -10,6 +10,7 @@ import UIKit
 
 class HomePageViewController: UIViewController, UITableViewDelegate { //FIXME need UITableDataSource
 
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,11 +24,19 @@ class HomePageViewController: UIViewController, UITableViewDelegate { //FIXME ne
     
 
     func cellForRowAtIndexPath(indexPath: NSIndexPath) -> UITableViewCell? {
-        return nil;
+        let cell = tableView.dequeueReusableCellWithIdentifier("expenseCell", forIndexPath: indexPath)
+        cell.textLabel!.text = "\(indexPath.row)"
+        print("indexing cells")
+        return cell;
+  
     }
     
     func numberOfRowsInSection(section: Int) -> Int {
         return 1;
+    }
+    
+    func numberOfSectionsInTableView() -> Int {
+        return 5;
     }
     
     
