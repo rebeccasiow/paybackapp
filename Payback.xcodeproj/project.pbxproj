@@ -16,6 +16,7 @@
 		A22C52331C7E17C0009234A9 /* expenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C52321C7E17C0009234A9 /* expenseCell.swift */; };
 		A22C52351C7E1BBC009234A9 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C52341C7E1BBC009234A9 /* HomePageViewController.swift */; };
 		A23A2A151C84A71B0041994D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23A2A141C84A71B0041994D /* User.swift */; };
+		A23A2A171C84A90B0041994D /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23A2A161C84A90B0041994D /* Expense.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A22C52321C7E17C0009234A9 /* expenseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = expenseCell.swift; sourceTree = "<group>"; };
 		A22C52341C7E1BBC009234A9 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		A23A2A141C84A71B0041994D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A23A2A161C84A90B0041994D /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				A22C52321C7E17C0009234A9 /* expenseCell.swift */,
 				A22C52341C7E1BBC009234A9 /* HomePageViewController.swift */,
 				A23A2A141C84A71B0041994D /* User.swift */,
+				A23A2A161C84A90B0041994D /* Expense.swift */,
 			);
 			path = Payback;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A23A2A171C84A90B0041994D /* Expense.swift in Sources */,
 				A22C52331C7E17C0009234A9 /* expenseCell.swift in Sources */,
 				A22C52241C7E0DF7009234A9 /* Payback.xcdatamodeld in Sources */,
 				A23A2A151C84A71B0041994D /* User.swift in Sources */,
