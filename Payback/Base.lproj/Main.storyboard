@@ -22,7 +22,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="expenseCell" rowHeight="97" id="Azg-q7-Hrk" customClass="expenseCell" customModule="Payback" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="97"/>
+                                        <rect key="frame" x="0.0" y="92" width="375" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Azg-q7-Hrk" id="y1e-CR-6DR">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="96.5"/>
@@ -83,12 +83,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="648.5" y="352.5"/>
+            <point key="canvasLocation" x="638.5" y="352.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Item View Controller Scene-->
         <scene sceneID="KCk-Nq-6lf">
             <objects>
-                <viewController id="YSr-d8-0Kg" sceneMemberID="viewController">
+                <viewController title="Add Item View Controller Scene" id="YSr-d8-0Kg" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gmr-42-jAG"/>
                         <viewControllerLayoutGuide type="bottom" id="E3G-ZU-S12"/>
@@ -170,10 +170,10 @@
             </objects>
             <point key="canvasLocation" x="2037.5" y="1189.5"/>
         </scene>
-        <!--View Controller-->
+        <!--View Expenses View Controller Scene-->
         <scene sceneID="WKR-Z4-Xi7">
             <objects>
-                <viewController id="7hz-EM-It6" sceneMemberID="viewController">
+                <viewController title="View Expenses View Controller Scene" id="7hz-EM-It6" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MN7-Zw-mX3"/>
                         <viewControllerLayoutGuide type="bottom" id="Bgs-YH-nqr"/>
@@ -189,10 +189,10 @@
             </objects>
             <point key="canvasLocation" x="1339.5" y="352.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Initial Navigation Controller Scene-->
         <scene sceneID="Mjj-Yu-4oY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Wo-6N-aZX" sceneMemberID="viewController">
+                <navigationController title="Initial Navigation Controller Scene" automaticallyAdjustsScrollViewInsets="NO" id="2Wo-6N-aZX" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kxe-mX-zg3">
@@ -208,10 +208,10 @@
             </objects>
             <point key="canvasLocation" x="-97" y="319"/>
         </scene>
-        <!--Add friend-->
+        <!--Add Friend View Controller Scene-->
         <scene sceneID="knO-sz-lZh">
             <objects>
-                <tableViewController id="3Da-xN-LZT" sceneMemberID="viewController">
+                <tableViewController title="Add Friend View Controller Scene" id="3Da-xN-LZT" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="VkJ-hc-ibo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -274,10 +274,10 @@
             </objects>
             <point key="canvasLocation" x="614.5" y="1156.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Add Item Navigation Controller Scene-->
         <scene sceneID="U0o-7s-6f6">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ytg-u9-udG" sceneMemberID="viewController">
+                <navigationController title="Add Item Navigation Controller Scene" automaticallyAdjustsScrollViewInsets="NO" id="Ytg-u9-udG" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nk2-b9-Wbp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -292,10 +292,10 @@
             </objects>
             <point key="canvasLocation" x="1450.5" y="1189.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Add Friend View Controller Scene-->
         <scene sceneID="Jmm-Ao-IW0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="guQ-3A-E1h" sceneMemberID="viewController">
+                <navigationController title="Add Friend View Controller Scene" automaticallyAdjustsScrollViewInsets="NO" id="guQ-3A-E1h" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fdE-el-Yfz">
@@ -313,6 +313,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ld3-NI-ks6"/>
+        <segue reference="WZA-1Z-h1D"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -32,7 +32,6 @@ class HomePageViewController: UIViewController,UITableViewDataSource, UITableVie
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("expenseCell", forIndexPath: indexPath)
         //cell.textLabel!.text = "\(indexPath.row)"
-        print("indexing cells")
         return cell;
     }
     

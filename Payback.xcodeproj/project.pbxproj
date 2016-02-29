@@ -15,6 +15,7 @@
 		A22C52291C7E0DF7009234A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A22C52271C7E0DF7009234A9 /* LaunchScreen.storyboard */; };
 		A22C52331C7E17C0009234A9 /* expenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C52321C7E17C0009234A9 /* expenseCell.swift */; };
 		A22C52351C7E1BBC009234A9 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C52341C7E1BBC009234A9 /* HomePageViewController.swift */; };
+		A23A2A151C84A71B0041994D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23A2A141C84A71B0041994D /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A22C522A1C7E0DF7009234A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A22C52321C7E17C0009234A9 /* expenseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = expenseCell.swift; sourceTree = "<group>"; };
 		A22C52341C7E1BBC009234A9 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		A23A2A141C84A71B0041994D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				A22C52221C7E0DF7009234A9 /* Payback.xcdatamodeld */,
 				A22C52321C7E17C0009234A9 /* expenseCell.swift */,
 				A22C52341C7E1BBC009234A9 /* HomePageViewController.swift */,
+				A23A2A141C84A71B0041994D /* User.swift */,
 			);
 			path = Payback;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			files = (
 				A22C52331C7E17C0009234A9 /* expenseCell.swift in Sources */,
 				A22C52241C7E0DF7009234A9 /* Payback.xcdatamodeld in Sources */,
+				A23A2A151C84A71B0041994D /* User.swift in Sources */,
 				A22C521E1C7E0DF7009234A9 /* ViewController.swift in Sources */,
 				A22C52351C7E1BBC009234A9 /* HomePageViewController.swift in Sources */,
 				A22C521C1C7E0DF7009234A9 /* AppDelegate.swift in Sources */,
@@ -296,6 +300,7 @@
 				A22C522F1C7E0DF7009234A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
