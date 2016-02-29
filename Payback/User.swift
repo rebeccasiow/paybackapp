@@ -19,13 +19,20 @@ class User : Hashable {
         }
     }
     
-    init() {
-        
+    init(id:Int, name: String) {
+        self.id = id
+        self.name = name
+        self.expensesWhereIsBuyer = []
+        self.expensesWhereIsOwer = []
     }
     
     // Sum all the expenses in expensesWhereIsOwer where user is relevant
     func getAmountOwedTo(user: User) -> Double {
-        
+        var total: Double = 0.0
+        for expense : Expense in expensesWhereIsOwer{
+            total += expense.getAmountOwed(self)
+        }
+        return total
     }
     
     
