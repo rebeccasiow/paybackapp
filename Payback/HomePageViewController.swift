@@ -8,11 +8,13 @@
 
 import UIKit
 
-class HomePageViewController: UIViewController, UITableViewDelegate { //FIXME need UITableDataSource
-
+class HomePageViewController: UIViewController,UITableViewDataSource, UITableViewDelegate  {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self;
+        tableView.delegate = self;
 
         // Do any additional setup after loading the view.
     }
@@ -22,8 +24,20 @@ class HomePageViewController: UIViewController, UITableViewDelegate { //FIXME ne
         // Dispose of any resources that can be recreated.
     }
     
+    func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
+    {
+        return 20
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("expenseCell", forIndexPath: indexPath)
+        //cell.textLabel!.text = "\(indexPath.row)"
+        return cell;
+    }
+    
 
-    func cellForRowAtIndexPath(indexPath: NSIndexPath) -> UITableViewCell? {
+    /*
+    func cellForRowAtIndexPath(tableView: UITableView, indexPath: NSIndexPath) -> UITableViewCell? {
         let cell = tableView.dequeueReusableCellWithIdentifier("expenseCell", forIndexPath: indexPath)
         cell.textLabel!.text = "\(indexPath.row)"
         print("indexing cells")
@@ -31,11 +45,13 @@ class HomePageViewController: UIViewController, UITableViewDelegate { //FIXME ne
   
     }
     
-    func numberOfRowsInSection(section: Int) -> Int {
+    func numberOfRowsInSection(tableView: UITableView!, section: Int) -> Int {
         return 1;
     }
+*/
+
     
-    func numberOfSectionsInTableView() -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 5;
     }
     
