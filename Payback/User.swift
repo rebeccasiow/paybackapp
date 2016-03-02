@@ -30,7 +30,9 @@ class User : Hashable {
     func getAmountOwedTo(user: User) -> Double {
         var total: Double = 0.0
         for expense : Expense in expensesWhereIsOwer{
-            total += expense.getAmountOwed(self)
+            if expense.getAmountOwed(self) != -1 {
+                total += expense.getAmountOwed(self)
+            }
         }
         return total
     }
