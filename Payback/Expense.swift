@@ -37,6 +37,8 @@ class Expense {
         self.owers = owers
         let owerCount = owers.count
         let autosplit = totalAmount/Double(owerCount)
+        amountOwed = [User : Double]()
+        amountPaid = [User : Double]()
         for user in owers[1..<owerCount] {
             amountOwed[user] = autosplit
             amountPaid[user] = 0.0
@@ -47,17 +49,17 @@ class Expense {
     
     func getAmountOwed(user: User) -> Double { // Returns -1 if user is not involved
         if let val = amountOwed[user] {
-            return amountOwed[user]!;
+            return val
         }
-        else{
+        else {
             return -1;
         }        
     }
     func getAmountPaid(user: User) -> Double {
         if let val = amountPaid[user] {
-            return amountPaid[user]!;
+            return val
         }
-        else{
+        else {
             return -1;
         }
         
