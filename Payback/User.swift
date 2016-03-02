@@ -37,6 +37,14 @@ class User : Hashable {
         return total
     }
     
+    func addAsBuyer(expense: Expense){
+        self.expensesWhereIsBuyer.append(expense)
+    }
+    
+    func addAsOwer(expense: Expense){
+        self.expensesWhereIsOwer.append(expense)
+    }
+    
     
     
 }
