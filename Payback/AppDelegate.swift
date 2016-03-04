@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("created info for user Silas")
         ModelManager.getInstance().addData(info)
         print("addData returned")
-        
         // Override point for customization after application launch.
         return true
     }

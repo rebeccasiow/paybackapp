@@ -17,6 +17,7 @@
 		A22C52351C7E1BBC009234A9 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C52341C7E1BBC009234A9 /* HomePageViewController.swift */; };
 		A23A2A151C84A71B0041994D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23A2A141C84A71B0041994D /* User.swift */; };
 		A23A2A171C84A90B0041994D /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23A2A161C84A90B0041994D /* Expense.swift */; };
+		B221C1D01C87567000CBB4A9 /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B221C1CF1C87567000CBB4A9 /* AddExpenseViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A24AE0441C8754F2007F3540 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24AE0431C8754F2007F3540 /* ModelManager.swift */; };
 		A2937D341C874C4800FEEBB9 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2937D331C874C4800FEEBB9 /* libsqlite3.0.tbd */; };
 		A2937D411C874CA900FEEBB9 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = A2937D371C874CA900FEEBB9 /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -42,6 +43,7 @@
 		A22C52341C7E1BBC009234A9 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		A23A2A141C84A71B0041994D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A23A2A161C84A90B0041994D /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		B221C1CF1C87567000CBB4A9 /* AddExpenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
 		A24AE0431C8754F2007F3540 /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelManager.swift; path = Payback/ModelManager.swift; sourceTree = "<group>"; };
 		A2937D331C874C4800FEEBB9 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		A2937D351C874CA800FEEBB9 /* Payback-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Payback-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				A22C52341C7E1BBC009234A9 /* HomePageViewController.swift */,
 				A23A2A141C84A71B0041994D /* User.swift */,
 				A23A2A161C84A90B0041994D /* Expense.swift */,
+				B221C1CF1C87567000CBB4A9 /* AddExpenseViewController.swift */,
 			);
 			path = Payback;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A23A2A171C84A90B0041994D /* Expense.swift in Sources */,
+				B221C1D01C87567000CBB4A9 /* AddExpenseViewController.swift in Sources */,
 				A22C52331C7E17C0009234A9 /* expenseCell.swift in Sources */,
 				A24AE0441C8754F2007F3540 /* ModelManager.swift in Sources */,
 				A22C52241C7E0DF7009234A9 /* Payback.xcdatamodeld in Sources */,
