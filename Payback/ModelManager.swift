@@ -10,7 +10,7 @@ import UIKit
 
 // FIX ME
 class ModelManager: NSObject {
-    
+    /*
     static var database:Int
     
     override init() {
@@ -27,6 +27,6 @@ class ModelManager: NSObject {
             sharedInstance.database = FMDatabase(path: Utility.getPath("payback.sqlite"))
         }
         return sharedInstance
-    }
+    }*/
 
 }

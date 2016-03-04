@@ -13,6 +13,8 @@ class HomePageViewController: UIViewController,UITableViewDataSource, UITableVie
     @IBOutlet weak var tableView: UITableView!
     var userList = []
     let user3 = User(id: 3, name: "Tess")
+    let user1 = User(id: 1, name: "Shefali")
+    let user2 = User(id: 2, name: "Kelly")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +22,6 @@ class HomePageViewController: UIViewController,UITableViewDataSource, UITableVie
         tableView.dataSource = self;
         tableView.delegate = self;
         
-        let user1 = User(id: 1, name: "Shefali")
-        let user2 = User(id: 2, name: "Kelly")
         let expense1 = Expense(id: 1, name: "Rent", payer: user3, totalAmount: 200.00, owers: [user2])
         let expense2 = Expense(id: 2, name: "Food", payer: user3, totalAmount: 15.00, owers: [user1])
         user1.addAsBuyer(expense1)
@@ -29,6 +29,7 @@ class HomePageViewController: UIViewController,UITableViewDataSource, UITableVie
         user3.addAsBuyer(expense2)
         user2.addAsOwer(expense1)
         self.userList = [user1,user2]
+        print(user1.getAmountOwedTo(user3))
 
         // Do any additional setup after loading the view.
     }

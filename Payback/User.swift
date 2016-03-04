@@ -32,26 +32,30 @@ class User : Hashable {
         var total: Double = 0.0
         print("inside get amount owed")
         for expense : Expense in expensesWhereIsOwer{
-            print("inside expense for loop")
-            /*if expense.getAmountOwed(self) != -1 {
-                print("inside expense != 1")*/
-                total += expense.getAmountOwed(self)
-            //}
+            do {
+                try total += expense.getAmountOwed(self)
+            } catch ExpenseError.userNotInvolved {
+                print("Error: User Not Involved in Transaction.")
+            } catch{
+                print("Error: General.")
+            }
         }
         return total
+    
     }
     
     func addAsBuyer(expense: Expense){
+        print("inside add as buyer")
         self.expensesWhereIsBuyer.append(expense)
     }
     
     func addAsOwer(expense: Expense){
+        print("inside add as ower")
         self.expensesWhereIsOwer.append(expense)
     }
     
     
     
-    }
 }
     func ==(left: User, right: User) -> Bool {
     return left.id == right.id
