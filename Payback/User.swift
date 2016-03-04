@@ -29,10 +29,13 @@ class User : Hashable {
     // Sum all the expenses in expensesWhereIsOwer where user is relevant
     func getAmountOwedTo(user: User) -> Double {
         var total: Double = 0.0
+        print("inside get amount owed")
         for expense : Expense in expensesWhereIsOwer{
-            if expense.getAmountOwed(self) != -1 {
+            print("inside expense for loop")
+            /*if expense.getAmountOwed(self) != -1 {
+                print("inside expense != 1")*/
                 total += expense.getAmountOwed(self)
-            }
+            //}
         }
         return total
     }
