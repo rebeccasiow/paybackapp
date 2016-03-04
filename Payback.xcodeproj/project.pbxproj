@@ -26,6 +26,7 @@
 		A2937D451C874CA900FEEBB9 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = A2937D401C874CA900FEEBB9 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A2937D471C874F5800FEEBB9 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2937D461C874F5800FEEBB9 /* Utility.swift */; };
 		A2937D4D1C8753A700FEEBB9 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2937D4C1C8753A700FEEBB9 /* UserInfo.swift */; };
+		A2BFB4061C89F8EA00BAF6E7 /* payback.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A2BFB4051C89F8EA00BAF6E7 /* payback.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		A2937D401C874CA900FEEBB9 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = Payback/FMResultSet.m; sourceTree = "<group>"; };
 		A2937D461C874F5800FEEBB9 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utility.swift; path = Payback/Utility.swift; sourceTree = "<group>"; };
 		A2937D4C1C8753A700FEEBB9 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfo.swift; path = Payback/UserInfo.swift; sourceTree = "<group>"; };
+		A2BFB4051C89F8EA00BAF6E7 /* payback.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = payback.sqlite; path = Payback/payback.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		A22C520F1C7E0DF6009234A9 = {
 			isa = PBXGroup;
 			children = (
+				A2BFB4051C89F8EA00BAF6E7 /* payback.sqlite */,
 				A2937D4B1C87538C00FEEBB9 /* SQLite */,
 				A2937D481C87505700FEEBB9 /* FMDB */,
 				A22C521A1C7E0DF7009234A9 /* Payback */,
@@ -195,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2BFB4061C89F8EA00BAF6E7 /* payback.sqlite in Resources */,
 				A22C52291C7E0DF7009234A9 /* LaunchScreen.storyboard in Resources */,
 				A22C52261C7E0DF7009234A9 /* Assets.xcassets in Resources */,
 				A22C52211C7E0DF7009234A9 /* Main.storyboard in Resources */,
