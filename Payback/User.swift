@@ -25,6 +25,7 @@ class User : Hashable {
         self.expensesWhereIsBuyer = []
         self.expensesWhereIsOwer = []
     }
+
     
     // Sum all the expenses in expensesWhereIsOwer where user is relevant
     func getAmountOwedTo(user: User) -> Double {
@@ -50,8 +51,8 @@ class User : Hashable {
     
     
     
+    }
 }
-
-func ==(left: User, right: User) -> Bool {
+    func ==(left: User, right: User) -> Bool {
     return left.id == right.id
 }
