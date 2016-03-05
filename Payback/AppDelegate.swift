@@ -17,7 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        Util.copyFile("payback.sqlite")
+        Utility.copyFile("payback.sqlite")
+        print("copied file")
+        let info = UserInfo(name: "Silas")
+        print("created info for user Silas")
+        ModelManager.getInstance().addData(info)
+        print("addData returned")
         // Override point for customization after application launch.
         return true
     }

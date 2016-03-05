@@ -9,7 +9,11 @@
 import UIKit
 
 class UserInfo: NSObject {
-    var id: String = String() // Note: actually an integer
+    //var id: String = String() // Note: actually an integer
     var userName: String = String()
+    
+    init(name: String) {
+        self.userName = name
+    }
 
 }
