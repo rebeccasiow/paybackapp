@@ -72,18 +72,19 @@ class Expense {
         let autosplit = totalAmount/Double(owerCount)
         amountOwed = [User : Double]()
         amountPaid = [User : Double]()
-        for user in owers[1..<owerCount] {
+        for user in owers[0..<owerCount] {
             amountOwed[user] = autosplit
             amountPaid[user] = 0.0
+            print("how much does each owe? : \(amountOwed[user]!)")
         }
-        
     }
     
-    
     func getAmountOwed(user: User) throws -> Double { // Returns -1 if user is not involved
-        guard let val = amountOwed[user] else {
+        guard let val = amountOwed[user] else {        print("NOT WIRKING")
+
             throw ExpenseError.userNotInvolved
         }
+        print("\(val)")
         return val
     }
     func getAmountPaid(user: User) throws -> Double {
