@@ -10,6 +10,13 @@ import UIKit
 
 class HomePageViewController: UIViewController,UITableViewDataSource, UITableViewDelegate  {
     
+    var valueToPass: User
+    
+    required init(coder aDecoder: NSCoder) {
+        self.valueToPass = User(id:-1, name:"dummy")
+        super.init(coder: aDecoder)!
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     static var userList:[User] = []
     static var userOfApp:User = User(id:0, name: "Me")
@@ -90,16 +97,33 @@ class HomePageViewController: UIViewController,UITableViewDataSource, UITableVie
     }
     
     
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        print("You selected cell #\(indexPath.row)!")
+        
+        // Get Cell Label
+        let indexPath = tableView.indexPathForSelectedRow!
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
+        
+        valueToPass = HomePageViewController.userList[indexPath.row]
+        performSegueWithIdentifier("itemizedExpenseView", sender: self)
+        
+    }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        
+        if (segue.identifier == "itemizedExpenseView") {
+            
+            // initialize new view controller and cast it as your view controller
+            let viewController = segue.destinationViewController as! ViewExpensesViewController
+            // your new view controller should have property that will store passed value
+            
+            viewController.passedUser = valueToPass
+        }
     }
-    */
+    
 
 }
