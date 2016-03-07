@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6806B6CE1C8D0274009A1FDA /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6806B6CD1C8D0274009A1FDA /* AddFriendViewController.swift */; };
 		A22C521C1C7E0DF7009234A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C521B1C7E0DF7009234A9 /* AppDelegate.swift */; };
 		A22C521E1C7E0DF7009234A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C521D1C7E0DF7009234A9 /* ViewController.swift */; };
 		A22C52211C7E0DF7009234A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A22C521F1C7E0DF7009234A9 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6806B6CD1C8D0274009A1FDA /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		A22C52181C7E0DF7009234A9 /* Payback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Payback.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A22C521B1C7E0DF7009234A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A22C521D1C7E0DF7009234A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				A23A2A141C84A71B0041994D /* User.swift */,
 				A23A2A161C84A90B0041994D /* Expense.swift */,
 				B221C1CF1C87567000CBB4A9 /* AddExpenseViewController.swift */,
+				6806B6CD1C8D0274009A1FDA /* AddFriendViewController.swift */,
 			);
 			path = Payback;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				A23A2A151C84A71B0041994D /* User.swift in Sources */,
 				A22C521E1C7E0DF7009234A9 /* ViewController.swift in Sources */,
 				A2937D421C874CA900FEEBB9 /* FMDatabaseAdditions.m in Sources */,
+				6806B6CE1C8D0274009A1FDA /* AddFriendViewController.swift in Sources */,
 				A2937D451C874CA900FEEBB9 /* FMResultSet.m in Sources */,
 				A2937D471C874F5800FEEBB9 /* Utility.swift in Sources */,
 				A22C52351C7E1BBC009234A9 /* HomePageViewController.swift in Sources */,

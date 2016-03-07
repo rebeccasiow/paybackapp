@@ -11,7 +11,8 @@ import UIKit
 class HomePageViewController: UIViewController,UITableViewDataSource, UITableViewDelegate  {
     
     @IBOutlet weak var tableView: UITableView!
-    var userList = []
+    static var userList:[User] = []
+    static var userOfApp:User = User(id:0, name: "Me")
     let user3 = User(id: 3, name: "Tess")
     let user1 = User(id: 1, name: "Shefali")
     let user2 = User(id: 2, name: "Kelly")
@@ -22,8 +23,8 @@ class HomePageViewController: UIViewController,UITableViewDataSource, UITableVie
         tableView.dataSource = self;
         tableView.delegate = self;
         
-        let expense1 = Expense(id: 1, name: "Rent", payer: user3, totalAmount: 200.00, owers: [user2])
-        let expense2 = Expense(id: 2, name: "Food", payer: user3, totalAmount: 15.00, owers: [user1])
+        let expense1 = Expense(id: 1, name: "Rent", buyer: user3, totalAmount: 200.00, owers: [user2])
+        let expense2 = Expense(id: 2, name: "Food", buyer: user3, totalAmount: 15.00, owers: [user1])
         user1.addAsBuyer(expense1)
         user2.addAsOwer(expense1)
         user3.addAsBuyer(expense2)

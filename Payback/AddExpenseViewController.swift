@@ -13,6 +13,7 @@ class AddExpenseViewController: UIViewController {
     @IBOutlet weak var amountField: UITextField!
     @IBOutlet weak var buyerField: UITextField!
     @IBOutlet weak var owerField: UITextField!
+    
     let user0 = User(id: 0, name: "Shefali")
     let user1 = User(id: 1, name: "Becca")
     let user2 = User(id: 2, name: "Kelly")
@@ -31,7 +32,7 @@ class AddExpenseViewController: UIViewController {
 
         let shefalisUsers: [User] = [user0, user1, user2, user3, user4]
         
-        let shefalisExpense = Expense(id: 0, name: "pencils", payer: user0, totalAmount: 5.0, owers: shefalisUsers)
+        let shefalisExpense = Expense(id: 0, name: "pencils", buyer: user0, totalAmount: 5.0, owers: shefalisUsers)
         
         do {
             var user0owesShefali = 0.0
@@ -42,6 +43,23 @@ class AddExpenseViewController: UIViewController {
         } catch{
             print("Error: General.")
         }
+        
+        
+    }
+    
+    @IBAction func doneButtonPressed(sender: AnyObject) {
+        var foundOwers = [User]()
+        var foundBuyer:User? = nil
+        for user in HomePageViewController.userList {
+            if user.name == owerField.text {
+                foundOwers.append(user)
+            }
+            if (user.name == buyerField.text) {
+                foundBuyer = user
+            }
+        }
+        
+        var expense = Expense(id: 0, name: itemField.text!, buyer: foundBuyer!, totalAmount: Double(amountField.text!)!, owers:foundOwers)
         
         
     }

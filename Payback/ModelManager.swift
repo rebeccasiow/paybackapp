@@ -52,14 +52,14 @@ class ModelManager: NSObject {
     
     func addExpenseData(expenseInfo: Expense) -> Bool {
         sharedInstance.database!.open()
-        let isInserted = sharedInstance.database!.executeUpdate("INSERT INTO expenses (id, expenseName, buyerID, total) VALUES (NULL, ?, ?, ?)", withArgumentsInArray: [expenseInfo.name, expenseInfo.payer.id, expenseInfo.totalAmount])
+        let isInserted = sharedInstance.database!.executeUpdate("INSERT INTO expenses (id, expenseName, buyerID, total) VALUES (NULL, ?, ?, ?)", withArgumentsInArray: [expenseInfo.name, expenseInfo.buyer.id, expenseInfo.totalAmount])
         sharedInstance.database!.close()
         return isInserted
     }
     
     func updateExpenseData(expenseInfo: Expense, id: Int) -> Bool {
         sharedInstance.database!.open()
-        let isUpdated = sharedInstance.database!.executeUpdate("UPDATE expenses SET expenseName=?, buyerID=?, total=? WHERE id=?", withArgumentsInArray: [expenseInfo.name, expenseInfo.payer.id, expenseInfo.totalAmount, id])
+        let isUpdated = sharedInstance.database!.executeUpdate("UPDATE expenses SET expenseName=?, buyerID=?, total=? WHERE id=?", withArgumentsInArray: [expenseInfo.name, expenseInfo.buyer.id, expenseInfo.totalAmount, id])
         sharedInstance.database!.close()
         return isUpdated
     }
