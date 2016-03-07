@@ -27,7 +27,7 @@
 		A2937D451C874CA900FEEBB9 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = A2937D401C874CA900FEEBB9 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A2937D471C874F5800FEEBB9 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2937D461C874F5800FEEBB9 /* Utility.swift */; };
 		A2BFB4061C89F8EA00BAF6E7 /* payback.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A2BFB4051C89F8EA00BAF6E7 /* payback.sqlite */; };
-		A2D5DEBC1C8DE33100790179 /* ViewExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D5DEBB1C8DE33100790179 /* ViewExpensesViewController.swift */; };
+		A2D5DEBE1C8DE47D00790179 /* ViewExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D5DEBD1C8DE47D00790179 /* ViewExpensesViewController.swift */; };
 		B221C1D01C87567000CBB4A9 /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B221C1CF1C87567000CBB4A9 /* AddExpenseViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +61,7 @@
 		A2937D401C874CA900FEEBB9 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = Payback/FMResultSet.m; sourceTree = "<group>"; };
 		A2937D461C874F5800FEEBB9 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utility.swift; path = Payback/Utility.swift; sourceTree = "<group>"; };
 		A2BFB4051C89F8EA00BAF6E7 /* payback.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = payback.sqlite; path = Payback/payback.sqlite; sourceTree = "<group>"; };
-		A2D5DEBB1C8DE33100790179 /* ViewExpensesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExpensesViewController.swift; sourceTree = "<group>"; };
+		A2D5DEBD1C8DE47D00790179 /* ViewExpensesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExpensesViewController.swift; sourceTree = "<group>"; };
 		B221C1CF1C87567000CBB4A9 /* AddExpenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,7 +113,7 @@
 				A23A2A161C84A90B0041994D /* Expense.swift */,
 				B221C1CF1C87567000CBB4A9 /* AddExpenseViewController.swift */,
 				6806B6CD1C8D0274009A1FDA /* AddFriendViewController.swift */,
-				A2D5DEBB1C8DE33100790179 /* ViewExpensesViewController.swift */,
+				A2D5DEBD1C8DE47D00790179 /* ViewExpensesViewController.swift */,
 			);
 			path = Payback;
 			sourceTree = "<group>";
@@ -232,7 +232,7 @@
 				A22C52351C7E1BBC009234A9 /* HomePageViewController.swift in Sources */,
 				A2937D431C874CA900FEEBB9 /* FMDatabasePool.m in Sources */,
 				A2937D441C874CA900FEEBB9 /* FMDatabaseQueue.m in Sources */,
-				A2D5DEBC1C8DE33100790179 /* ViewExpensesViewController.swift in Sources */,
+				A2D5DEBE1C8DE47D00790179 /* ViewExpensesViewController.swift in Sources */,
 				A22C521C1C7E0DF7009234A9 /* AppDelegate.swift in Sources */,
 				A2937D411C874CA900FEEBB9 /* FMDatabase.m in Sources */,
 			);

@@ -45,7 +45,6 @@
                                         <connections>
                                             <outlet property="amountLabel" destination="bQI-aF-d8n" id="k8c-nx-qWF"/>
                                             <outlet property="nameLabel" destination="wgQ-HF-AEk" id="ZOO-Zr-6HE"/>
-                                            <segue destination="7hz-EM-It6" kind="presentation" id="eT7-cT-Orn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -79,11 +78,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="w5B-tu-yHC" id="hYB-Vd-Ql9"/>
+                        <segue destination="ero-WB-ALP" kind="custom" identifier="itemizedExpenseView" id="fhB-l0-hjD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="638.5" y="352.5"/>
+            <point key="canvasLocation" x="696.5" y="352.5"/>
         </scene>
         <!--Add Expense View Controller-->
         <scene sceneID="KCk-Nq-6lf">
@@ -176,24 +176,34 @@
             </objects>
             <point key="canvasLocation" x="2129.5" y="1171.5"/>
         </scene>
-        <!--View Expenses View Controller Scene-->
-        <scene sceneID="WKR-Z4-Xi7">
+        <!--View Expenses View Controller-->
+        <scene sceneID="eq6-X5-fVo">
             <objects>
-                <viewController title="View Expenses View Controller Scene" id="7hz-EM-It6" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="MN7-Zw-mX3"/>
-                        <viewControllerLayoutGuide type="bottom" id="Bgs-YH-nqr"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QSR-Dd-Pvu">
+                <tableViewController id="ero-WB-ALP" customClass="ViewExpensesViewController" customModule="Payback" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Bn5-D5-7Zr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemizedExpenseCell" id="OAo-0p-7IM">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OAo-0p-7IM" id="SAa-Od-6Gr">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ero-WB-ALP" id="jlT-VZ-reN"/>
+                            <outlet property="delegate" destination="ero-WB-ALP" id="Iue-YR-2SZ"/>
+                        </connections>
+                    </tableView>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DuK-fb-zA4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="psf-qR-mLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1339.5" y="352.5"/>
+            <point key="canvasLocation" x="1176.5" y="352.5"/>
         </scene>
         <!--Initial Navigation Controller Scene-->
         <scene sceneID="Mjj-Yu-4oY">

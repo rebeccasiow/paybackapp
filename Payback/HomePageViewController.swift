@@ -10,6 +10,13 @@ import UIKit
 
 class HomePageViewController: UIViewController,UITableViewDataSource, UITableViewDelegate  {
     
+    var valueToPass: User
+    
+    required init(coder aDecoder: NSCoder) {
+        self.valueToPass = User(id:-1, name:"dummy")
+        super.init(coder: aDecoder)!
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     static var userList:[User] = []
     static var userOfApp:User = User(id:0, name: "Me")
@@ -25,11 +32,9 @@ class HomePageViewController: UIViewController,UITableViewDataSource, UITableVie
         /**
         let expense1 = Expense(id: 1, name: "Rent", buyer: user3, totalAmount: 200.00, owers: [user2])
         let expense2 = Expense(id: 2, name: "Food", buyer: user3, totalAmount: 15.00, owers: [user1])
-        user1.addAsBuyer(expense1)
+        user3.addAsBuyer(expense1)
         user2.addAsOwer(expense1)
         user3.addAsBuyer(expense2)
-        user2.addAsOwer(expense1)
-        
         print(user1.getAmountOwedTo(user3))
 **/
         HomePageViewController.userList = [user1,user2,user3,HomePageViewController.userOfApp]
@@ -92,16 +97,33 @@ class HomePageViewController: UIViewController,UITableViewDataSource, UITableVie
     }
     
     
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        print("You selected cell #\(indexPath.row)!")
+        
+        // Get Cell Label
+        let indexPath = tableView.indexPathForSelectedRow!
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
+        
+        valueToPass = HomePageViewController.userList[indexPath.row]
+        performSegueWithIdentifier("itemizedExpenseView", sender: self)
+        
+    }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        
+        if (segue.identifier == "itemizedExpenseView") {
+            
+            // initialize new view controller and cast it as your view controller
+            let viewController = segue.destinationViewController as! ViewExpensesViewController
+            // your new view controller should have property that will store passed value
+            
+            viewController.passedUser = valueToPass
+        }
     }
-    */
+    
 
 }
