@@ -10,9 +10,11 @@ import UIKit
 
 class ViewExpensesViewController: UITableViewController {
     var passedUser: User
+    var friendExpenses: [Expense]
 
     required init(coder aDecoder: NSCoder) {
         self.passedUser = User(id:-1, name:"dummy")
+        self.friendExpenses = []
         super.init(coder: aDecoder)!
     }
     
@@ -25,6 +27,10 @@ class ViewExpensesViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        //friendExpenses[]
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,8 +53,9 @@ class ViewExpensesViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("itemizedExpenseCell", forIndexPath: indexPath)
-        
-        cell.textLabel!.text = HomePageViewController.userList[indexPath.row].name
+        print("gets to cellForRow")
+        //cell.textLabel!.text = HomePageViewController.userList[indexPath.row].name
+        cell.textLabel!.text = passedUser.name
 
         // Configure the cell...
 

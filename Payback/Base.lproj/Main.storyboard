@@ -78,7 +78,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="w5B-tu-yHC" id="hYB-Vd-Ql9"/>
-                        <segue destination="ero-WB-ALP" kind="show" identifier="itemizedExpenseView" id="fhB-l0-hjD"/>
+                        <segue destination="ero-WB-ALP" kind="custom" identifier="itemizedExpenseView" id="fhB-l0-hjD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
