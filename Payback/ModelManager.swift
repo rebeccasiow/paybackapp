@@ -14,6 +14,10 @@ class ModelManager: NSObject {
     
     var database:FMDatabase? = nil
     
+    enum DatabaseError: ErrorType {
+        case moreThanOneAmountOwedPerUserAndExpense
+    }
+    
     // This code is called at most once
     class func getInstance() -> ModelManager
     {
@@ -89,6 +93,25 @@ class ModelManager: NSObject {
         sharedInstance.database!.close()
         return isDeleted
     }
+    
+    /*
+    func getAmountOwedForUserOneExpense(expenseInfo: Expense, userInfo: User) throws -> Double {
+        sharedInstance.database!.open()
+        let resultSet: FMResultSet! = sharedInstance.database!.executeQuery("SELECT * from owed_and_paid WHERE expenseID=? AND owerID=?", withArgumentsInArray: [expenseInfo.id, userInfo.id])
+        var amountOwedArray:[Double] = []
+        if (resultSet != nil) {
+            while resultSet.next() {
+                let amountOwed:Double = Double(resultSet.stringForColumn("amountOwed"))!
+                amountOwedArray.append(amountOwed)
+            }
+        }
+        if (amountOwedArray.count != 1) {
+            throw DatabaseError.moreThanOneAmountOwedPerUserAndExpense
+        }
+        
+        return Double(amountOwedArray[0])
+    }
+    */
 
     
     

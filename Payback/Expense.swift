@@ -44,49 +44,68 @@ enum ExpenseError: ErrorType {
 class Expense {
     var id:Int
     var name:String
-    var payer:User
+    var buyer:User
     var totalAmount:Double
     var owers:[User]
     var amountOwed:[User : Double]
     var amountPaid:[User : Double]
     
-    init(id:Int, name:String, payer:User, totalAmount:Double, owers:[User], amountOwed:[User : Double],amountPaid:[User : Double]) {
+    init(id:Int, name:String, buyer:User, totalAmount:Double, owers:[User], amountOwed:[User : Double],amountPaid:[User : Double]) {
         self.id = id
         self.name = name
-        self.payer = payer
+        self.buyer = buyer
         self.totalAmount = totalAmount
         self.owers = owers
         self.amountOwed = amountOwed
         self.amountPaid = amountPaid
+        
+        ModelManager.getInstance().addExpenseData(self) //id, name, payer, totalAmount
+        for user in owers[0..<owers.count] {
+            ModelManager.getInstance().addOwedPaidData(self, userInfo: user) //owers, amountOwed, //amountPaid
+        }
 
     }
     
-    init(id:Int, name:String, payer:User, totalAmount:Double, owers:[User]) {
+    init(id:Int, name:String, buyer:User, totalAmount:Double, owers:[User]) {
         
         self.id = id
         self.name = name
-        self.payer = payer
+        self.buyer = buyer
         self.totalAmount = totalAmount
         self.owers = owers
         let owerCount = owers.count
         let autosplit = totalAmount/Double(owerCount)
         amountOwed = [User : Double]()
         amountPaid = [User : Double]()
+        ModelManager.getInstance().addExpenseData(self) //id, name, payer, totalAmount
         for user in owers[0..<owerCount] {
             amountOwed[user] = autosplit
             amountPaid[user] = 0.0
+            ModelManager.getInstance().addOwedPaidData(self, userInfo: user) //owers, amountOwed, //amountPaid
             print("how much does each owe? : \(amountOwed[user]!)")
         }
     }
     
     func getAmountOwed(user: User) throws -> Double { // Returns -1 if user is not involved
-        guard let val = amountOwed[user] else {        print("NOT WIRKING")
-
+        /*
+        var userOwes = 0.0
+        do {
+            try userOwes = ModelManager.getInstance().getAmountOwedForUserOneExpense(self, userInfo: user)
+        }
+        catch {
+            
+        }
+        */
+        
+        //does not query because no change -- already stored locally
+        guard let val = amountOwed[user] else {
             throw ExpenseError.userNotInvolved
         }
         print("\(val)")
+
         return val
     }
+    
     func getAmountPaid(user: User) throws -> Double {
         guard let val = amountPaid[user] else {
             throw ExpenseError.userNotInvolved
@@ -99,6 +118,8 @@ class Expense {
         return amountOwed[user]!-amountPaid[user]!;
         
     }
+    
+    
 }
 
 
