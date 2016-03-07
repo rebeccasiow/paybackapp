@@ -29,7 +29,7 @@ class HomePageViewController: UIViewController,UITableViewDataSource, UITableVie
         user2.addAsOwer(expense1)
         user3.addAsBuyer(expense2)
         user2.addAsOwer(expense1)
-        self.userList = [user1,user2]
+        HomePageViewController.userList = [user1,user2]
         print(user1.getAmountOwedTo(user3))
 
         // Do any additional setup after loading the view.
@@ -42,7 +42,7 @@ class HomePageViewController: UIViewController,UITableViewDataSource, UITableVie
     
     func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
     {
-        return userList.count
+        return HomePageViewController.userList.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -53,7 +53,7 @@ class HomePageViewController: UIViewController,UITableViewDataSource, UITableVie
         let cell = tableView.dequeueReusableCellWithIdentifier("expenseCell", forIndexPath: indexPath) as! expenseCell
         print("here")
         print(indexPath.row)
-        let temp = userList[indexPath.row] as! User
+        let temp = HomePageViewController.userList[indexPath.row] as! User
         print(temp.name)
         cell.nameLabel?.text = temp.name
         cell.amountLabel?.text = "$" + String(temp.getAmountOwedTo(user3))
