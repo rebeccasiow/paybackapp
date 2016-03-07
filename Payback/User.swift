@@ -19,8 +19,11 @@ class User : Hashable {
         }
     }
     
+    static var idIncrementor:Int = 1
+    
     init(id:Int, name: String) {
-        self.id = id
+        self.id = User.idIncrementor
+        User.idIncrementor++
         self.name = name
         self.expensesWhereIsBuyer = []
         self.expensesWhereIsOwer = []
@@ -30,7 +33,6 @@ class User : Hashable {
     // Sum all the expenses in expensesWhereIsOwer where user is relevant
     func getAmountOwedTo(user: User) -> Double {
         var total: Double = 0.0
-        print("inside get amount owed")
         for expense : Expense in expensesWhereIsOwer{
             do {
                 try total += expense.getAmountOwed(self)
@@ -45,12 +47,10 @@ class User : Hashable {
     }
     
     func addAsBuyer(expense: Expense){
-        print("inside add as buyer")
         self.expensesWhereIsBuyer.append(expense)
     }
     
     func addAsOwer(expense: Expense){
-        print("inside add as ower")
         self.expensesWhereIsOwer.append(expense)
     }
     

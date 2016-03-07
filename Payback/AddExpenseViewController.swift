@@ -13,6 +13,7 @@ class AddExpenseViewController: UIViewController {
     @IBOutlet weak var amountField: UITextField!
     @IBOutlet weak var buyerField: UITextField!
     @IBOutlet weak var owerField: UITextField!
+    var doneButton = UIButton()
     
     let user0 = User(id: 0, name: "Shefali")
     let user1 = User(id: 1, name: "Becca")
@@ -22,13 +23,10 @@ class AddExpenseViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        print("HEOELOOELOEOOOOEOEOW ROLDS ")
-
         super.viewDidLoad()
     
 
         // Do any additional setup after loading the view.
-        print("HEOELOOELOEOOOOEOEOW ROLDS ")
 
         let shefalisUsers: [User] = [user0, user1, user2, user3, user4]
         
@@ -43,11 +41,11 @@ class AddExpenseViewController: UIViewController {
         } catch{
             print("Error: General.")
         }
-        
-        
     }
     
     @IBAction func doneButtonPressed(sender: AnyObject) {
+        
+        print("done button pressed")
         var foundOwers = [User]()
         var foundBuyer:User? = nil
         for user in HomePageViewController.userList {
@@ -59,8 +57,53 @@ class AddExpenseViewController: UIViewController {
             }
         }
         
-        var expense = Expense(id: 0, name: itemField.text!, buyer: foundBuyer!, totalAmount: Double(amountField.text!)!, owers:foundOwers)
+        if (itemField.text == nil || itemField.text == "") {
+            // popup "fail"
+            showPopUp("Enter Expense Name")
+            return
+        }
         
+        //if any important fields are nil, invalid
+        if foundBuyer == nil {
+            //popup "we couldnt find that buyer"
+            showPopUp("We couldn't find that user!")
+            return
+            
+        } else if foundOwers.count == 0 {
+            // popup "we coulndt..."
+            showPopUp("We couldn't find that user!")
+            return
+        }
+        let amountOpt = Double(amountField.text!)
+        if amountOpt == nil {
+            // popup "invalid amount"
+            showPopUp("Invalid Amount!")
+            return
+        }
+        let amount = amountOpt!
+        
+        let expense = Expense(id: 0, name: itemField.text!, buyer: foundBuyer!, totalAmount: amount, owers:foundOwers)
+        
+        for user in foundOwers {
+            user.expensesWhereIsOwer.append(expense)
+        }
+        foundBuyer!.expensesWhereIsBuyer.append(expense)
+        
+    }
+    
+    func showPopUp(message : String){
+        
+        let alert = UIAlertController(title: "Info Missing", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let alertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default)
+            {
+                (UIAlertAction) -> Void in
+            }
+        alert.addAction(alertAction)
+        presentViewController(alert, animated: true)
+            {
+                () -> Void in 
+            }
+
         
     }
 
