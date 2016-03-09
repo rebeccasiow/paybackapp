@@ -29,15 +29,17 @@ class HomePageViewController: UIViewController,UITableViewDataSource, UITableVie
         
         tableView.dataSource = self;
         tableView.delegate = self;
-        /**
-        let expense1 = Expense(id: 1, name: "Rent", buyer: user3, totalAmount: 200.00, owers: [user2])
-        let expense2 = Expense(id: 2, name: "Food", buyer: user3, totalAmount: 15.00, owers: [user1])
-        user3.addAsBuyer(expense1)
+        
+        let expense1 = Expense(id: 1, name: "Rent", buyer: HomePageViewController.userOfApp, totalAmount: 300.00, owers: [user2, user3])
+        let expense2 = Expense(id: 2, name: "Food", buyer: HomePageViewController.userOfApp, totalAmount: 15.00, owers: [user1])
+        HomePageViewController.userOfApp.addAsBuyer(expense1)
         user2.addAsOwer(expense1)
-        user3.addAsBuyer(expense2)
+        user1.addAsOwer(expense2)
+        user3.addAsOwer(expense1)
+        HomePageViewController.userOfApp.addAsBuyer(expense2)
         print(user1.getAmountOwedTo(user3))
-**/
-        HomePageViewController.userList = [user1,user2,user3,HomePageViewController.userOfApp]
+        
+        HomePageViewController.userList = [user1,user2,user3]
 
         // Do any additional setup after loading the view.
     }

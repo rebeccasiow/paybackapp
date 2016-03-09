@@ -9,18 +9,47 @@
 import UIKit
 
 class ViewExpensesViewController: UITableViewController {
-    var passedUser: User
-    var friendExpenses: [Expense]
-
-    required init(coder aDecoder: NSCoder) {
-        self.passedUser = User(id:-1, name:"dummy")
-        self.friendExpenses = []
-        super.init(coder: aDecoder)!
-    }
+    var passedUser: User!
+    var friendExpenses: [Expense]! = []
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(passedUser.name)
+        var tempExpenses: [Expense]
+        for expense in HomePageViewController.userOfApp.expensesWhereIsBuyer {
+           //  Get expenses where passedUser is ower
+            var amountOwed: Double
+            do {
+                try amountOwed = expense.getAmountOwed(passedUser)
+            }
+            catch {
+                amountOwed = 0
+            }
+            if (amountOwed > 0) {
+                friendExpenses.append(expense)
+                print(expense.name)
+                print(expense.amountOwed)
+                print("owed by passedUser")
+            }
+
+        }
+        for expense in passedUser.expensesWhereIsBuyer {
+            // Get expenses where userOfApp is ower
+            var amountOwed: Double
+            do {
+                try amountOwed = expense.getAmountOwed(HomePageViewController.userOfApp)
+            }
+            catch {
+                amountOwed = 0
+            }
+            if (amountOwed > 0) {
+                friendExpenses.append(expense)
+                print(expense.name)
+                print(expense.amountOwed)
+                print("owed by userOfApp")
+            }
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -42,22 +71,24 @@ class ViewExpensesViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("itemizedExpenseCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("expenseCell", forIndexPath: indexPath) as! expenseCell
         print("gets to cellForRow")
         //cell.textLabel!.text = HomePageViewController.userList[indexPath.row].name
         cell.textLabel!.text = passedUser.name
 
         // Configure the cell...
+        
+        
 
         return cell
     }

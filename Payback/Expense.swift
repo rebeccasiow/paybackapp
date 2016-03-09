@@ -74,7 +74,7 @@ class Expense {
         self.totalAmount = totalAmount
         self.owers = owers
         let owerCount = owers.count
-        let autosplit = totalAmount/Double(owerCount)
+        let autosplit = totalAmount/Double(owerCount+1) //Plus one for buyer
         amountOwed = [User : Double]()
         amountPaid = [User : Double]()
         ModelManager.getInstance().addExpenseData(self) //id, name, payer, totalAmount
@@ -98,12 +98,15 @@ class Expense {
         */
         
         //does not query because no change -- already stored locally
+        
         guard let val = amountOwed[user] else {
             throw ExpenseError.userNotInvolved
+            
         }
         print("\(val)")
 
         return val
+
     }
     
     func getAmountPaid(user: User) throws -> Double {
