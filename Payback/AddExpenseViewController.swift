@@ -45,7 +45,6 @@ class AddExpenseViewController: UIViewController {
     
     @IBAction func doneButtonPressed(sender: AnyObject) {
         
-        print("done button pressed")
         var foundOwers = [User]()
         var foundBuyer:User? = nil
         for user in HomePageViewController.userList {
@@ -55,6 +54,15 @@ class AddExpenseViewController: UIViewController {
             if (user.name == buyerField.text) {
                 foundBuyer = user
             }
+        }
+        
+        let userOfApp:User = HomePageViewController.userOfApp
+        
+        if (userOfApp.name == owerField.text) {
+            foundOwers.append(userOfApp)
+        }
+        if (userOfApp.name == buyerField.text) {
+            foundBuyer = userOfApp
         }
         
         if (itemField.text == nil || itemField.text == "") {
