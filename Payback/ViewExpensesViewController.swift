@@ -18,7 +18,7 @@ class ViewExpensesViewController: UITableViewController {
         print(passedUser.name)
         var tempExpenses: [Expense]
         for expense in HomePageViewController.userOfApp.expensesWhereIsBuyer {
-           //  Get expenses where passedUser is ower
+            //  Get expenses where passedUser is ower
             var amountOwed: Double
             do {
                 try amountOwed = expense.getAmountOwed(passedUser)
@@ -76,7 +76,7 @@ class ViewExpensesViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return friendExpenses.count
     }
 
     
@@ -84,7 +84,31 @@ class ViewExpensesViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("expenseCell", forIndexPath: indexPath) as! expenseCell
         print("gets to cellForRow")
         //cell.textLabel!.text = HomePageViewController.userList[indexPath.row].name
-        cell.textLabel!.text = passedUser.name
+        //cell.textLabel!.text = passedUser.name
+        
+        let temp = friendExpenses[indexPath.row]
+        print(temp.name)
+        cell.nameLabel?.text = temp.name
+        
+        print("temp: " + temp.name + " " + temp.buyer.name + " " + String(temp.totalAmount))
+        for (User, Double) in temp.amountOwed {
+            print("user: " + User.name + " amount: " + String(Double))
+        }
+        
+        if (temp.buyer == HomePageViewController.userOfApp) {
+            do {
+                try cell.amountLabel?.text = "$" + String(temp.amountOwed[passedUser]!)
+            } catch {
+                cell.amountLabel?.text = String(0)
+            }
+        }
+        else {
+            do {
+                try cell.amountLabel?.text = "-$" + String(temp.getAmountOwed(HomePageViewController.userOfApp))
+            } catch {
+                cell.amountLabel?.text = String(0)
+            }
+        }
 
         // Configure the cell...
         

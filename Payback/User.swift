@@ -33,13 +33,15 @@ class User : Hashable {
     // Sum all the expenses in expensesWhereIsOwer where user is relevant
     func getAmountOwedTo(user: User) -> Double {
         var total: Double = 0.0
-        for expense : Expense in expensesWhereIsOwer{
-            do {
-                try total += expense.getAmountOwed(self)
-            } catch ExpenseError.userNotInvolved {
-                print("Error: User Not Involved in Transaction.")
-            } catch{
-                print("Error: General.")
+        for expense : Expense in expensesWhereIsOwer {
+            if expense.buyer == user {
+                do {
+                    try total += expense.getAmountOwed(self)
+                } catch ExpenseError.userNotInvolved {
+                    print("Error: User Not Involved in Transaction.")
+                } catch{
+                    print("Error: General.")
+                }
             }
         }
         return total

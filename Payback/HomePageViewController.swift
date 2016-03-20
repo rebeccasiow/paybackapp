@@ -19,10 +19,10 @@ class HomePageViewController: UIViewController,UITableViewDataSource, UITableVie
     
     @IBOutlet weak var tableView: UITableView!
     static var userList:[User] = []
-    static var userOfApp:User = User(id:0, name: "Me")
-    let user3 = User(id: 3, name: "Tess")
-    let user1 = User(id: 1, name: "Shefali")
-    let user2 = User(id: 2, name: "Kelly")
+    static let userOfApp:User = User(id:0, name: "Me")
+    let tess = User(id: 3, name: "Tess")
+    let shefali = User(id: 1, name: "Shefali")
+    let kelly = User(id: 2, name: "Kelly")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,16 +30,30 @@ class HomePageViewController: UIViewController,UITableViewDataSource, UITableVie
         tableView.dataSource = self;
         tableView.delegate = self;
         
-        let expense1 = Expense(id: 1, name: "Rent", buyer: HomePageViewController.userOfApp, totalAmount: 300.00, owers: [user2, user3])
-        let expense2 = Expense(id: 2, name: "Food", buyer: HomePageViewController.userOfApp, totalAmount: 15.00, owers: [user1])
-        HomePageViewController.userOfApp.addAsBuyer(expense1)
-        user2.addAsOwer(expense1)
-        user1.addAsOwer(expense2)
-        user3.addAsOwer(expense1)
-        HomePageViewController.userOfApp.addAsBuyer(expense2)
-        print(user1.getAmountOwedTo(user3))
+        let rent = Expense(id: 1, name: "January rent", buyer: HomePageViewController.userOfApp, totalAmount: 300.00, owers: [kelly, tess])
+        let groceries = Expense(id: 2, name: "Groceries", buyer: HomePageViewController.userOfApp, totalAmount: 15.00, owers: [shefali])
+        let icecream = Expense(id: 3, name: "Ice cream", buyer: HomePageViewController.userOfApp, totalAmount: 30.00, owers: [kelly, tess])
+        let burgers = Expense(id: 4, name: "Burgers", buyer: shefali, totalAmount: 30.00, owers: [HomePageViewController.userOfApp, tess])
         
-        HomePageViewController.userList = [user1,user2,user3]
+       
+        HomePageViewController.userOfApp.addAsBuyer(rent)
+        kelly.addAsOwer(rent)
+        tess.addAsOwer(rent)
+        
+        HomePageViewController.userOfApp.addAsBuyer(groceries)
+        shefali.addAsOwer(groceries)
+        
+        HomePageViewController.userOfApp.addAsBuyer(icecream)
+        kelly.addAsOwer(icecream)
+        tess.addAsOwer(icecream)
+        
+        
+        shefali.addAsBuyer(burgers)
+        HomePageViewController.userOfApp.addAsOwer(burgers)
+        tess.addAsOwer(burgers)
+        
+        
+        HomePageViewController.userList = [shefali,kelly,tess]
 
         // Do any additional setup after loading the view.
     }
@@ -64,8 +78,17 @@ class HomePageViewController: UIViewController,UITableViewDataSource, UITableVie
         print(indexPath.row)
         let temp = HomePageViewController.userList[indexPath.row] as! User
         print(temp.name)
+        
+        let money = temp.getAmountOwedTo(HomePageViewController.userOfApp) - HomePageViewController.userOfApp.getAmountOwedTo(temp)
+        
+        if temp.name == "Kelly" {
+            print("Kelly owes to user: " + String(temp.getAmountOwedTo(HomePageViewController.userOfApp)))
+            print("User owes to Kelly: " + String(HomePageViewController.userOfApp.getAmountOwedTo(temp)))
+        }
+        
+        
         cell.nameLabel?.text = temp.name
-        cell.amountLabel?.text = "$" + String(temp.getAmountOwedTo(user3))
+        cell.amountLabel?.text = "$" + String(money)
         
         return cell
         
